@@ -1,0 +1,195 @@
+$Very-Dark-Magenta: hsl(300, 43%, 22%);
+$Soft-Pink: hsl(333, 80%, 67%);
+$Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+$Light-Grayish-Magenta: hsl(300, 24%, 96%);
+$White: hsl(0, 0%, 100%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 15px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+h1 {
+    color: $Very-Dark-Magenta;
+    font-size: 2.5rem;
+    line-height: .7;
+}
+
+.main-container {
+    width: 95%;
+    max-width: 1440px;
+    margin: 0px auto;
+    padding: 10px 10px;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+    animation: toLeft 1s linear;
+
+}
+
+.card {
+    padding: 30px 0px;
+    max-width: 500px;
+    margin: 0px auto;
+
+    .text-center p {
+        color: $Dark-Grayish-Magenta;
+        max-width: 82%;
+        margin: 20px auto;
+    }
+
+    &__reviews--item {
+        background-color: $Light-Grayish-Magenta;
+        padding: 10px;
+        text-align: center;
+        max-width: 400px;
+        margin: 10px auto;
+        animation: toRight 1s linear;
+
+        p {
+            color: $Very-Dark-Magenta;
+            margin-top: 5px;
+            font-weight: 700;
+        }
+    }
+
+    &__comments--item {
+        background-color: $Very-Dark-Magenta;
+        padding: 20px 35px;
+        color: $White;
+        border-radius: 10px;
+        max-width: 400px;
+        margin: 0px auto;
+        margin-bottom: 10px;
+        animation: toBottom 1s linear;
+
+        .photo img {
+            display: flex;
+            border-radius: 50%;
+            width: 2rem;
+            margin-right: 10px;
+        }
+
+        .d-flex {
+            margin: 10px 0px;
+        }
+
+        span {
+            color: $Soft-Pink;
+        }
+
+        .comment {
+            width: 90%;
+        }
+    }
+}
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@keyframes toLeft {
+    0%{
+        transform: translateX(-25%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+@keyframes toRight {
+    0%{
+        transform: translateX(25%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+@keyframes toBottom {
+    0%{
+        transform: translateY(25%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@media (min-width:1024px) {
+    .main-container{
+        display: flex;
+        align-items: center;
+        height: 100vh;
+    }
+    .d-flex-lg{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    h1{
+        font-size: 4rem;
+    }
+    .card{
+        max-width: max-content;
+        .text-center{
+            text-align: start;
+            p{margin: 20px 0px;font-size: 1.2rem;}
+        }
+        &__heading{
+            flex-basis: 40%;
+        }
+        &__reviews{
+            flex-basis: 50%;
+            &--item{
+                min-width: 400px;
+                margin: 30px 0px;
+                &:nth-child(2){
+                    margin-left: 2rem;
+                }
+                &:nth-child(3){
+                    margin-left: 4rem;
+                }
+                p{
+                    padding-left: 2rem;
+                }
+            }
+        }
+        &__comments{
+            &--item{
+                padding: 40px 20px;
+                margin: 0px 10px;
+                &:nth-child(2){
+                    margin-top: 2rem;
+                }
+                &:nth-child(3){
+                    margin-top: 4rem;
+                }
+                p{
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}
